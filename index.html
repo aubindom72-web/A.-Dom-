@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site Perso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Bienvenue sur mon site !</h1>
+    <p id="message">Découvre mon site web.</p>
+    <img src="/storage/emulated/0/DCIM/.thumbnails/1755602922789.jpg" alt="Belle image" width="250">
+
+    <br><br>
+    <button onclick="afficherMessage()">Afficher un message</button>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- SECTION À PROPOS -->
+<section id="apropos" class="section">
+    <h2>À propos de moi</h2>
+    <p>
+        Je suis Aubin Dom, passionné par le développement web et la création de sites modernes.
+        Ce site est personnel, où je partage mes connaissances et mes projets.
+    </p>
+</section>
+
+<!-- SECTION PROJETS -->
+<section id="projets" class="section">
+    <h2>Mon projet</h2>
+    <div class="projets">
+        <div class="carte">
+            <h3>Projet :  Création de site Web 🌐</h3>
+            <p> Création de sites avec HTML, CSS et Javascript. Il s'agit par exemple des sites personnel, d'étude, commercial, etc .</p>
+        </div>
+       
+</section>
+
+<!-- Bouton sur ta page -->
+<button id="btnPDF">Télécharger mon CV (PDF)</button>
+
+<!-- Script JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+document.getElementById("btnPDF").addEventListener("click", () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.setTextColor(0, 102, 204);
+    doc.text("Aubin Dom", 20, 20);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text("Étudiant en développement Web et en informatique au Bénin", 20, 30);
+    doc.text("Email : aubindom72@gmail.com", 20, 40);
+    doc.text("Téléphone : 0160355995", 20, 47);
+    doc.text("Site : https://dom.com", 20, 54);
+
+    doc.text("Profil :", 20, 70);
+    doc.text("Étudiant passionné par le Web et la technologie.", 20, 78);
+
+    doc.text("Compétences :", 20, 95);
+    doc.text("- HTML, CSS, rédaction, communication", 20, 103);
+
+    doc.text("Expérience :", 20, 120);
+    doc.text("Création de mon site personnel", 20, 128);
+
+    doc.text("Mis à jour : novembre 2025", 20, 150);
+
+    doc.save("CV_Aubin_Dom.pdf");
+});
+</script>
+   
+   
